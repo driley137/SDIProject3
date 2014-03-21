@@ -4,7 +4,7 @@ var jsonWorkout = {
       "Jumping Jacks" : 40,
       "Push Ups" : 100,
       "Leg Lifts" : 50
- }]
+ }],
 
   "gymWorkouts" :[{
       "Pull Ups" : 40,

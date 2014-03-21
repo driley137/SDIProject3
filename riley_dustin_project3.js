@@ -34,3 +34,66 @@
  * 
  */
 
+
+// D E C L A R E   V A R I A B L E S
+var fName = "First"; lName = "Last"; hours = 0; ready = true; time = 0; routine = "";
+
+
+
+// P R O M P T I N G  user for inputs and storing them
+ready = confirm("Are you ready to get your blood pumping?");
+fName = prompt("What is your First name?" , "First");
+lName = prompt("What is your Last name?" , "Last");
+hours = prompt("How many hours until you have to be somewhere?");
+
+
+// E V A L U A T E  confirm prompt.
+function isReady(ready) {
+    // Local Variable
+    var r = ready;
+    
+    if (ready === true) {
+    //Runs this code if the user is ready!
+    // This calls all of the main methods.
+    
+    
+    } else {
+    
+    console.log("Sorry to hear, come back when you are!");
+    
+    } // END ELSE
+}
+
+// P R O C E D U R E
+function currentTime() {
+    
+    var today = getDate();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    time += h + ":" + m;
+    console.log(h);
+    console.log(m);
+    
+} // END    c u r r e n t T i m e ()
+
+// QA
+console.log(currentTime(time));
+
+
+
+// M A T H function to
+function calculateHours(hours){
+    var h = parseInt(hours);
+    hours = parseInt(hours);
+    
+    while (hours >= h && h != 0) {
+        //Cycle through this code until you have a workout that fits within the time frame.
+        
+        
+        
+    } // END While
+
+    // Returning the amount of time user originally had
+    return hours;
+
+} // END    c a l c u l a t e H o u r s ()
