@@ -36,33 +36,57 @@
 
 
 // D E C L A R E   V A R I A B L E S
-var fName = "First"; lName = "Last"; hours = 0; ready = true; time = 0; routine = "";
+var fName = "First"; lName = "Last"; hours = 0; ready = true; time = 0; routine = ""; motoArray = ["Get some", "One more Rep", "Don't stop now"];
 
 
 
-// P R O M P T I N G  user for inputs and storing them
+// P R O M P T I N G  user if they're ready, then evaluate inputs based on response
 ready = confirm("Are you ready to get your blood pumping?");
-fName = prompt("What is your First name?" , "First");
-lName = prompt("What is your Last name?" , "Last");
-hours = prompt("How many hours until you have to be somewhere?");
+
+if (ready === true) {
+    // Prompt only if they're ready
+    fName = prompt("What is your First name?" , "First");
+    lName = prompt("What is your Last name?" , "Last");
+    hours = prompt("How many hours until you have to be somewhere?");
+    isReady(ready);
+    calculateHours(hours);
+    
+} else {
+    // Sorry to see you go!
+    console.log("Sorry to hear that, come back when you are!");
+    isReady(ready);
+} // END IF ELSE
 
 
-// E V A L U A T E  confirm prompt.
+// S T R I N G
+function motivation(){
+    //Local Variables
+    var name = fName;
+        for(var i = 0; i < motoArray.length; i++){
+            motoArray[i] = motoArray[i] + ", " + name + "!!";
+        }// END FOR LOOP
+    
+    return motoArray;
+} // END   m o t i v a t i o n ()
+
+
+// E V A L U A T E  boolean
 function isReady(ready) {
-    // Local Variable
-    var r = ready;
     
     if (ready === true) {
-    //Runs this code if the user is ready!
-    // This calls all of the main methods.
-    
-    
-    } else {
-    
-    console.log("Sorry to hear, come back when you are!");
-    
+        if (fName.length > 3) {
+            //Compliment
+            console.log("With a big strong name like " + fName + ", I know you'll move mountains!")  // I didn't use an escape character because I use
+                                                                                                     // double quote for strings. If best practice to use escape anyways, please advise
+        } else {
+            // Use last name, joke
+            console.log("How about we just go with your last name as I'm sure it's more masculine.");
+        } // end embed else
+    } else {  
+        console.log("There is no day like today, and there is no time like the present, I suggest you rethink your motivation!");
     } // END ELSE
-}
+} // END   i s R e a d y ()
+
 
 /*
 // P R O C E D U R E
@@ -78,7 +102,7 @@ function currentTime() {
 } // END    c u r r e n t T i m e ()
 */
 
-// M A T H function to
+// M A T H function to determine which workouts we have time for. It comes in the form of the while loop comparing original hours to time passed hours
 function calculateHours(hours){
     var h = parseInt(hours);
     hours = parseInt(hours);
@@ -88,8 +112,18 @@ function calculateHours(hours){
     while (hours >= h && h != 0) {
         //Cycle through this code until you have a workout that fits within the time frame.
         console.log("Since you have " + h + " hours left, do the following: " + jsonWorkout.workouts[i].cardio + " for cardio. Then " + jsonWorkout.workouts[i].bulk + " for bulk.");
+        if(i <= 0){
+            console.log("\n" + motivation(motoArray[0]));
+        } else if (i <= 1) {
+            console.log("\n" + motivation(motoArray[1]));
+        } else if (i <= 2) {
+            console.log("\n" + motivation(motoArray[1]));
+        } else {
+             console.log("\nThat's a long workout! Go get'em!");
+        } // END if else tree
         i++;
         h--;
+        console.log('************************');
     } // END While
 
     // Returning the amount of time user originally had
@@ -107,6 +141,10 @@ function calculateHours(hours){
 
 
 
-//   QA
+//   Q U A L I T Y   A S S U R A N C E
 // console.log(currentTime(time));
-console.log(calculateHours(hours));
+// console.log(calculateHours(hours));
+// console.log(motivation());
+// console.log(motoArray[1]);
+// console.log(motoArray[0]);
+// console.log(motoArray[2]);
