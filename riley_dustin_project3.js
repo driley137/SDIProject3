@@ -78,21 +78,13 @@ function calculateHours(hours){
     var h = parseInt(hours);
     hours = parseInt(hours);
     
-    var i = 0;  // index variable
+    var i = 0; x = 0; // index variable
     
     while (hours >= h && h != 0) {
         //Cycle through this code until you have a workout that fits within the time frame.
         console.log("Since you have " + h + " hours left, do the following: " + jsonWorkout.workouts[i].cardio + " for cardio. Then " + jsonWorkout.workouts[i].bulk + " for bulk.");
         //Printing motivation out
-        if(i <= 0){
-            console.log("\n" + motivation(motoArray[0]));
-        } else if (i <= 1) {
-            console.log("\n" + motivation(motoArray[1]));
-        } else if (i <= 2) {
-            console.log("\n" + motivation(motoArray[2]));
-        } else {
-             console.log("\nThat's a long workout! Go get'em!");
-        } // END if else tree
+        console.log(motivation(motoArray[x]));
         i++;
         h--;
         console.log('************************');
