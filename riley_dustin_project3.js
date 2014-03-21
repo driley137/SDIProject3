@@ -64,6 +64,7 @@ function isReady(ready) {
     } // END ELSE
 }
 
+/*
 // P R O C E D U R E
 function currentTime() {
     
@@ -75,25 +76,37 @@ function currentTime() {
     console.log(m);
     
 } // END    c u r r e n t T i m e ()
-
-// QA
-console.log(currentTime(time));
-
-
+*/
 
 // M A T H function to
 function calculateHours(hours){
     var h = parseInt(hours);
     hours = parseInt(hours);
     
+    var i = 0;  // index variable
+    
     while (hours >= h && h != 0) {
         //Cycle through this code until you have a workout that fits within the time frame.
-        
-        
-        
+        console.log("Since you have " + h + " hours left, do the following: " + jsonWorkout.workouts[i].cardio + " for cardio. Then " + jsonWorkout.workouts[i].bulk + " for bulk.");
+        i++;
+        h--;
     } // END While
 
     // Returning the amount of time user originally had
     return hours;
 
 } // END    c a l c u l a t e H o u r s ()
+
+
+
+
+
+
+
+
+
+
+
+//   QA
+// console.log(currentTime(time));
+console.log(calculateHours(hours));

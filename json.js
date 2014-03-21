@@ -1,16 +1,23 @@
 var jsonWorkout = {
+    "workouts" :
+    [
+        // 0
+        {
+            "cardio" : "Run 3 miles",
+            "bulk"  : "Bench Max weight, max reps",
+        },
     
-    "indoorWorkouts" :[{
-      "Jumping Jacks" : 40,
-      "Push Ups" : 100,
-      "Leg Lifts" : 50
- }],
-
-  "gymWorkouts" :[{
-      "Pull Ups" : 40,
-     "Curls" : 40,
-      "Bench Press" : 50
- }]
-  
-  
+        // 1
+        {
+            "cardio" : "200 Jumping Jacks",
+            "bulk"  :  "40 Curls each arm, max weight"
+        },
+        
+        //2
+        {
+            "cardio" : "Bicycle 5 miles",
+            "bulk"   : "50 double leg extensions, max weight"
+        }
+    ]
+    
 } // END jsonWorkout
